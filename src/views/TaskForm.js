@@ -15,7 +15,8 @@ const TaskForm = ({ onAddTask }) => {
       <form onSubmit={handleSubmit}>
       <label >Write Task:--</label>
         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="Enter task" required />
-        <button type="submit" style={{width:"10%"}}>ADD</button>
+        <br></br>
+        <button type="submit" style={{width:"8%"}}>ADD</button>
       </form>
     </div>
   );

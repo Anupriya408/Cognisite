@@ -1,17 +1,38 @@
 import React, { useState,useEffect } from 'react';
+//  import axios from 'axios';
 
 const RegisterForm = ({ onRegister }) => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
-
-  const [user, setUser] = useState([]);
-
+  const [users, setUsers] = useState([]);
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  const handleSubmit =  (e) => {
+   e.preventDefault();
+
+    // axios.post("http://localhost:8080/",users)
+  
+
+      const getData = () => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:8080/users", requestOptions)
+      .then((response) => response.json())
+      .then((result) => setUsers(result))
+      .catch((error) => console.log("error", error));
+  };
+
+  
+    getData();
+
+
+
 
     // Validate the form inputs
     const formErrors = validateForm();
@@ -22,7 +43,7 @@ const RegisterForm = ({ onRegister }) => {
       setMobile('');
       setPassword('');
       setErrors({});
-      setUser({});
+      setUsers({});
     } else {
       setErrors(formErrors);
     }
@@ -81,7 +102,7 @@ const RegisterForm = ({ onRegister }) => {
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           {errors.password && <span className="error">{errors.password}</span>}
         </div>
-
+        
         <button type="submit" style={{color:"black",width:"8%"}}>REGISTER</button>
        
       

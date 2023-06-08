@@ -19,11 +19,11 @@ const LoginForm = ({ onLogin }) => {
       <form onSubmit={handleSubmit}>
         <label>Mobile:--</label>
         <input type="text" id="mobile" value={mobile} onChange={(e) => setMobile(e.target.value)} required />
-
+        <br></br>
         <label>Password:--</label>
         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-
-        <button type="submit" style={{color:"black",width:"8%"}}> LOGIN</button>
+        <br></br>
+        <button type="submit" style={{color:"black",width:"8%"}}>LOGIN</button>
       </form>
     </div>
   );

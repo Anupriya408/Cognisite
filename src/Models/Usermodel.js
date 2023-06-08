@@ -1,23 +1,37 @@
 import { useState,useEffect } from 'react';
+import axios  from 'axios';
 
 const useUserModel = () => {
   const [users, setUsers] = useState([]);
 
 
-  useEffect(() => {
-    localStorage.setItem('dataKey', JSON.stringify(users));
-    // var users = localStorage.getItem("datakey") || JSON.stringify([]);
-    // users = JSON.parse(users);
-  //   const savedItem = localStorage.getItem("datakey");
-  // const parsedItem = JSON.parse(savedItem);
-  // return parsedItem || "";
-  }, [users]);
+  // const getData = () => {
+  //   var requestOptions = {
+  //     method: "GET",
+  //     redirect: "follow",
+  //   };
 
-  
+  //   fetch("http://localhost:8080/users", requestOptions)
+  //     .then((response) => response.json())
+  //     .then((result) => setUsers(result))
+  //     .catch((error) => console.log("error", error));
+  // };
 
-//   const [users, setUsers] = useState ( () => {
-  
-// });
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+
+  // useEffect(() => {
+    // localStorage.setItem('dataKey', JSON.stringify(users));
+   
+
+   
+  // }, [users]);
+
+  // axios.post( "http://localhost:3000/",users)
+
+
   
   const addUser = (user) => {
     setUsers([...users, user]);
