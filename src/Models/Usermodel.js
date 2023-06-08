@@ -6,6 +6,8 @@ const useUserModel = () => {
 
   useEffect(() => {
     localStorage.setItem('dataKey', JSON.stringify(users));
+    // var users = localStorage.getItem("datakey") || JSON.stringify([]);
+    // users = JSON.parse(users);
   //   const savedItem = localStorage.getItem("datakey");
   // const parsedItem = JSON.parse(savedItem);
   // return parsedItem || "";
