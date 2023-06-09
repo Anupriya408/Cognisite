@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 //  import axios from 'axios';
+import './registerForm.css'
 
 const RegisterForm = ({ onRegister }) => {
   const [name, setName] = useState('');
@@ -82,7 +83,7 @@ const RegisterForm = ({ onRegister }) => {
 
  
   return (
-    <div>
+    <div className='register-form'>
       <h2  style={{color:"teal"}}>Registeration Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -103,7 +104,7 @@ const RegisterForm = ({ onRegister }) => {
           {errors.password && <span className="error">{errors.password}</span>}
         </div>
         
-        <button type="submit" style={{color:"black",width:"8%"}}>REGISTER</button>
+        <button type="submit">REGISTER</button>
        
       
       </form>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './loginForm.css'
+
+
 
 const LoginForm = ({ onLogin }) => {
   const [mobile, setMobile] = useState('');
@@ -14,7 +17,7 @@ const LoginForm = ({ onLogin }) => {
 
   
   return (
-    <div >
+    <div className="login-form">
       <h2 style={{color:"teal"}}>Login Form</h2>
       <form onSubmit={handleSubmit}>
         <label>Mobile:--</label>
@@ -23,7 +26,7 @@ const LoginForm = ({ onLogin }) => {
         <label>Password:--</label>
         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <br></br>
-        <button type="submit" style={{color:"black",width:"8%"}}>LOGIN</button>
+        <button type="submit">LOGIN</button>
       </form>
     </div>
   );
